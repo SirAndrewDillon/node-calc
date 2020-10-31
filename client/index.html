@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie-edge">
+  <meta name="description" content="SocketCalc">
+  <meta name="author" content="T. Andrew Taton">
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <title>SocketCalc</title>
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="heading-primary">
+      Andy's Socket Calculator
+    </h1>
+  </header>
+  <div class="container">
+    <div class="name-entry">
+      <label for="name-entry">Your name:</label>
+      <input type="text" id="name-entry" name="name-entry" />
+    </div>
+    <!-- <div id="output">
+      <div id="current-value"></div>
+      <div id="current-calc">
+        <div id="calc-label">Input: </div>
+        <div id="calc-content"></div>
+      </div>
+    </div> -->
+    <form name="calculator">
+
+			<input id="display" type="text" name="display" readonly>
+
+			<input class="button digits" type="button" value="7" onclick="calculator.display.value += '7'">
+			<input class="button digits" type="button" value="8" onclick="calculator.display.value += '8'">
+			<input class="button digits" type="button" value="9" onclick="calculator.display.value += '9'">
+			<input class="button mathButtons" type="button" value="+" onclick="calculator.display.value += ' + '">
+			<br>
+			<input class="button digits" type="button" value="4" onclick="calculator.display.value += '4'">
+			<input class="button digits" type="button" value="5" onclick="calculator.display.value += '5'">
+			<input class="button digits" type="button" value="6" onclick="calculator.display.value += '6'">
+			<input class="button mathButtons" type="button" value="-" onclick="calculator.display.value += ' - '">
+			<br>
+			<input class="button digits" type="button" value="1" onclick="calculator.display.value += '1'">
+			<input class="button digits" type="button" value="2" onclick="calculator.display.value += '2'">
+			<input class="button digits" type="button" value="3" onclick="calculator.display.value += '3'">
+			<input class="button mathButtons" type="button" value="x" onclick="calculator.display.value += ' * '">
+			<br>
+			<input id="clearButton" class="button" type="button" value="C" onclick="calculator.display.value = ''">
+			<input class="button digits" type="button" value="0" onclick="calculator.display.value += '0'">
+			<input class="button mathButtons" type="button" value="=" onclick="calculator.display.value = eval(calculator.display.value)">
+			<input class="button mathButtons" type="button" value="/" onclick="calculator.display.value += ' / '">
+		</form>
+    <div class="calc-footer">
+      <ol class="calc-report" id="calc-report"></ol>
+    </div>
+  </div>
+
+  <script src="vendor/socket.io.js"></script>
+  <script src="vendor/big.js"></script>
+  <script src="client.js" charset="utf-8"></script>
+</body>
+
+</html>
