@@ -15,7 +15,7 @@ if (fs.existsSync('./calculation-data.json')) {
   calculations = require('./calculation-data.json');
 }
 
-io.on('connection', socket => {
+io.on('connect', socket => {
   console.log('New client connected');
   io.emit('logs', { calculations });
 

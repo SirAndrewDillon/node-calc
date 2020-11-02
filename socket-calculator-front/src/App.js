@@ -16,6 +16,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.socket = io('http://socketcalculator.herokuapp.com');
+    this.socket.on('logs', data => this.setState({ logs: data.calculations }));
 
     // On a free tier, Heroku shuts down the server after certain time of inactivity
     // We need to make this GET call to wake up Heroku server.
@@ -23,8 +24,6 @@ class App extends React.Component {
       .get('http://socketcalculator.herokuapp.com')
       .then(res => {
         console.log(res.data);
-        this.socket = io('http://socketcalculator.herokuapp.com');
-        this.socket.on('logs', data => this.setState({ logs: data.calculations }));
       })
       .catch(e => console.error('Server seems to be shut off.'));
   }
