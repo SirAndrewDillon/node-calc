@@ -15,13 +15,13 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    this.socket = io('https://node-calcu.herokuapp.com/');
+    this.socket = io('https://mel-app.herokuapp.com/');
     this.socket.on('logs', data => this.setState({ logs: data.calculations }));
 
     // On a free tier, Heroku shuts down the server after certain time of inactivity
     // We need to make this GET call to wake up Heroku server.
     axios
-      .get('https://node-calcu.herokuapp.com/')
+      .get('https://mel-app.herokuapp.com/')
       .then(res => {
         console.log(res.data);
       })
