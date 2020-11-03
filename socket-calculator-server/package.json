@@ -9,7 +9,8 @@
   },
   "scripts": {
     "start": "node index.js",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "postinstal": "cd socket-calculator-server && npm i "
   },
   "engines": {
     "node": "10.15.3",
